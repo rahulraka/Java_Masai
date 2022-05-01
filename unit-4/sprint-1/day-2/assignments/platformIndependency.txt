@@ -1,0 +1,4 @@
+How java managed to be platform-independent explain.
+=>It actually is because of the working of Java's particular way of executing any program, Java compiler firstly compiles the prograrm of user into a High Level Language which is a Byte-Code,
+ and this file is processed again by JVM to execute, that's why we can just read that converted Byte Code file anywhere, where JRE(Java Runtime Environment) is present.
+i.e., in any other O.S.(Operating System), where JRE is installed byte-code can be executed there, that's how Java is platorm independent.

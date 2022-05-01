@@ -1,0 +1,23 @@
+##String:-
+
+String class is of Java.lang package, String is an object of type String, Strings are immutable,
+String object is created in SCP(string Constant Pool).
+eg:-
+String str="Hello";
+
+
+##StringBuffer:-String class is of Java.lang package, It is used to make String objects mutable,
+therefore These strings can be further modified, it is threadsafe, so it is slow comparede too StringBuilder.
+eg:-
+StringBuffer s1=new StringBuffer("Hello");
+
+##StringBuilder:-String class is of Java.lang package, It is used to make String objects mutable as 
+in StringBuffer too, but this is not threadsafe,so it is fast compared too StringBuffer.
+eg:-
+StringBuilder s1=new StringBuilder("Hello");
+
+##toString():-
+Whenever we print an object reference, it invokes the toString() method internally. hence, it gives the value as
+in the format of ClassName+@+some address(hashcode)
+So, if we don't define a toString() method in our class, then Object.toString() is invoked.
+

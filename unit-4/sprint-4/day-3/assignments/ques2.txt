@@ -1,0 +1,7 @@
+##Race Condition:-
+
+Race condition is one bad situation caused by property of Multithreading in JAVA itself, Race condition states that when two or more Threads are working 0n same resource and maybe modifying it,
+this thing can create a huge problem in your application, suppose One thread is adding data in you resource and another one is removing this will create the application to behave bad,
+and it may through exception,
+So for overcoming Race conditionjava introduce Synchronized concept, In this a method is set to synchronised i.e, The synchronise function is like a lock and key concept every class has two level of
+locks one Object level and one class level, Synchronise function use this locks to hold multiple thread to work on a single resource simultaneously.

@@ -1,0 +1,32 @@
+
+
+CHECKED EXCEPTION :-
+-----------------
+				the checked exception are those exception which compiler checked during 
+				compile time show message there may exception come please resolve it.
+				that is why Checked exception are called compile-time exception;
+				
+				we can resolve checked exception by providing try-catch block;
+				The class that directly inherit the throwable class except RuntimeException
+				 and Error are called checked exception.
+				 
+				
+				 example:
+				          IOException,SQLException,etc
+UNCHECKED EXCEPTION:-
+--------------------
+					These are those exception which are not checked at compile time,but they are
+					checked at runtime.
+					The classes that inherit the RuntimeException are known as unchecked exception.
+					
+					example :
+								ArithmaticException,NullpointerException ArrayIndexPutOfBountsException etc.
+								
+	
+The RuntimeException class is the superclass of all unchecked exceptions,sowe can create a custon unchecked exception by
+extending RuntimeException.
+
+	public class NullPointerException extends RuntimeException{
+		NullPointerException(String errormessage){
+		super(errormessage);
+	}	
