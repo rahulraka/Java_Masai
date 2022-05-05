@@ -1,0 +1,50 @@
+Ques1.1.Display details of employees in the HR department only.
+=> select * from Employee where Department='HR';
+
+
+2.List number of female employees.
+=>  select COUNT (GENDER) from Employee where Gender='F';
+
+
+3. Display all female HR employees.
+=>  select * from Employee where Department='HR' and Gender='F';
+
+
+
+4.Display all the names whose name starts with vowels.
+=> SELECT EmpFname, EmpLName FROM Employee WHERE EmpFname LIKE 'A%' OR EmpFname LIKE 'E%' OR EmpFname Like 'I%' OR EmpFname Like 'O%' OR EmpFname LIKE 'U%';
+
+
+5.List all the males whose name has a vowel as the 2nd character.
+=>  SELECT EmpFname, EmpLName FROM Employee WHERE EmpFname LIKE '_A%' OR EmpFname LIKE '_E%' OR EmpFname Like '_I%' OR EmpFname Like '_O%' OR EmpFname LIKE '_U%';
+
+
+6.Name of all departments.
+=> Select Distinct(Department) from Employee;
+
+
+7.all the female employees earning less than 75000.
+=> select * from Employee where Gender='F' and Salary<=75000;
+
+
+8.count number of employees earning between 50k and 1 lakh.
+=> select COUNT(Salary) from Employee where Salary between 50000 and 100000;
+
+
+9.count the number of projects.
+=> select COUNT(Project) from Employee;
+
+
+10.Department wise count of employees.
+=> select Department, Count(Department) from Employee group by Department;
+
+
+
+Q2.
+1. What is the difference between a Unique Key and Primary Key?
+=> Unique key- Unique key uniquely identifies a column of a tbale, i.e, it checks for
+   data to be uniques, null values are allowed, a table can have multiple Unique keys.
+=> Primary Key- It also uniquely identifies a column as Unique key, The difference is
+   it does'nt allow null values, not even one, and we can't have more than one Primary Key in a table.
+2.SQL is a case-sensitive language. (True or False)
+=> False, Sql is not a case-sensitive language.
