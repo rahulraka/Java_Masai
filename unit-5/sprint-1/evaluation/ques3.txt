@@ -1,0 +1,29 @@
+ACID Properties:
+=>A(Atomicity)-This states that whenever a transaction(Set of queries) tooks place it should be done or completed as a whole,
+i,.e, all the queries should be performed or none of them.
+
+=>C(Consiostency)- this states that if the data was in a consistent state before a transaction than it should in consistent state after performing the transaction.
+
+=>I(Isiolation)- this states that a transaction must not be aware of any other transactions performing simultaneulsy, i.e., it should not depend or get modified by any other transaction at the same time.
+
+=>D(Durability)-After completion of a transaction all changes performed during the transaction must be stored in a permanent system.
+
+
+Bank Transfer Example-
+
+amount in PersonA acc(10000);
+amount in PersonB acc(1000);
+tranferring amt of 1000 to PersonA from PersonBl;
+--Transaction satrts here
+check status of both accounts, check if have sufficient fund
+PersonA+1000;
+PersonB-1000;
+--Transaction ends here
+amount in PersonA acc(11000);
+amount in PersonB acc(0);
+
+
+===============================================================
+B. Disadvantages of indexing-
+=>When we index a column on a table it creates index for all the data in theat perticular column, this indexing is stored in men=mory, Hence it takes extra storage.
+=> Whenever we try to update or modify a value present in in indexed Column of a table, the indexing needs to be changed too, so the updating or modifying data takes more time than normal update.

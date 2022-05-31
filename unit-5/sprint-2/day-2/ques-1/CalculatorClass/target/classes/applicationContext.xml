@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sbe" class="com.masai.ServiceBean">
+	<constructor-arg name="x" value="50"/>
+	<constructor-arg name="y" value="50"/>
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+
+	<bean id="pb" class="com.masai.PresentationBean">
+	<constructor-arg ref="sbe"/>
+	
+	
+		<!-- collaborators and configuration for this bean go here -->
+	</bean>
+	
+
+</beans>

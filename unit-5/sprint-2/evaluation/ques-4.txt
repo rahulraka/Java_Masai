@@ -1,0 +1,15 @@
+A.What is difference between @RestController and @Controller?
+=> There is not much of a differnce between Controller and RESTController, as the name suggest Controller is used as annotation is SPRING MVC module. By using this we can return a view in MVC to return a Object by using @ResponseBody annotation inside a Controller Class.
+
+But as the name says all for RESTController it is mailnyl used in REST web service, In this you can return a Object without using @ResponeBody annotation.REStcontroller annotated classes are the same as @Controller but the @ResponseBody on the handler methods are implied. In REST controller JAckson API is used internally , because in REST web services JSON is default conversion type.
+
+========================================================================================
+B.What is the use of @Autowired annotation?Explain.
+=>@Autowired annotation – We can use Spring @Autowired annotation for spring bean autowiring. @Autowired annotation can be applied on variables and methods for autowiring byType. We can also use @Autowired annotation on constructor for constructor based spring autowiring. We dont need to explicitly defined Setter injection point.
+For @Autowired annotation to work, We need to Import Autowired Configuration file.
+In default Autowired function is Off.
+
+@Autowired
+Private A a1;
+
+After declaring we need not to declare any Setter methods i,e, we can just call it in Application Context class, and It will return us a Object of Particular class which we have configured in XMl file.

@@ -1,0 +1,12 @@
+A. SOAP based Webservice
+=>In SOAP base webservice w can't use HTTP protocols beacause It is XMl based, so we use XML based protocols to communicate between clients and Server side. And So we know that XML is also LAnguage and Platform independent Hence, it is also used.While using SOAP based webservice we also have to create some extra Meta files to operate and run our Main program, so It is quiet heavuy too.
+
+========================================================================================
+
+B. REST ful web service
+=>In REST webservice there is no Standard set so we can build service with both XML and JSON, and after building we can accessed the data by HTTP(Hypertext Transfer Protocol) based systems. It can be accessed throught URI.
+There are methods for HTTP
+*GET
+*PUT
+*POST
+*DELETE

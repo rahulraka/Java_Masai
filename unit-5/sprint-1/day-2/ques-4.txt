@@ -1,0 +1,72 @@
+create database Student;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use Student;
+Database changed
+
+ create table Students(student_id int(5) Primary Key, name varchar(12), address varchar(20));
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+
+ create table Marks(marks_id int(4), subject varchar(15), score int(4), student_id int(5), PRIMARY KEY (marks_id), FOREIGN KEY (student_id) REFERENCES Students(student_id));
+Query OK, 0 rows affected, 3 warnings (0.08 sec)
+
+INSERT INTO Students VALUES(1, 'Rahul', 'Delhi'),
+    -> (2, 'Monika', 'Bihar'),
+    -> (3, 'Manish', 'Chattisgarh'),
+    -> (4, 'Parul', 'Chennai'),
+    -> (5, 'Loman', 'Jaipur');
+Query OK, 5 rows affected (0.04 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> INSERT INTO Marks VALUES(1001, 'Science', 78, 1),
+    -> (1002, 'Science', 58, 2),
+    -> (1003, 'Science', 89, 3),
+    -> (1004, 'Maths', 88, 1),
+    -> (1005, 'Maths', 62, 2),
+    -> (1006, 'Maths', 44, 3);
+Query OK, 6 rows affected (0.02 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from Students; select * from Marks;
++------------+--------+-------------+
+| student_id | name   | address     |
++------------+--------+-------------+
+|          1 | Rahul  | Delhi       |
+|          2 | Monika | Bihar       |
+|          3 | Manish | Chattisgarh |
+|          4 | Parul  | Chennai     |
+|          5 | Loman  | Jaipur      |
++------------+--------+-------------+
+5 rows in set (0.00 sec)
+
++----------+---------+-------+------------+
+| marks_id | subject | score | student_id |
++----------+---------+-------+------------+
+|     1001 | Science |    78 |          1 |
+|     1002 | Science |    58 |          2 |
+|     1003 | Science |    89 |          3 |
+|     1004 | Maths   |    88 |          1 |
+|     1005 | Maths   |    62 |          2 |
+|     1006 | Maths   |    44 |          3 |
++----------+---------+-------+------------+
+6 rows in set (0.00 sec)
+
+
+ SELECT s.student_id, s.name AS 'student_name', IFNULL(SUM(m.score),-1) AS 'total marks'
+    -> FROM students s
+    -> LEFT JOIN
+    -> marks m
+    -> ON s.student_id = m.student_id
+    -> GROUP BY s.student_id;
++------------+--------------+-------------+
+| student_id | student_name | total marks |
++------------+--------------+-------------+
+|          1 | Rahul        |         166 |
+|          2 | Monika       |         120 |
+|          3 | Manish       |         133 |
+|          4 | Parul        |          -1 |
+|          5 | Loman        |          -1 |
++------------+--------------+-------------+
+5 rows in set (0.02 sec)

@@ -1,0 +1,51 @@
+The life cycle of a Spring-Bean contains 5 Stages:
+1. Before Creation(Doesn't Exist)
+=> Initaitlly spring Bean object is not created, If the bean object is in Singleton than its object is created while executing XML file, and wif the bean is in prototype scope, than the object is created before getting a call of the same method.
+
+2. Instantiation
+=>Spring container created bean class in memory and after that container used the given details to create object of the same class.
+
+3. Initialization
+=>In initialization method if there is any pre constructor method than, it will be initialized.
+
+4.Service Phase
+=>In this phase all the business logic is performed.
+
+5. Destroy Phase
+=>When we call close method on the function all the bean objects and container and all the resources are killed by Garbage Collector.
+
+Student.Java
+package com.masai;
+
+import java.util.List;
+
+public class Student {
+
+	public void beforeConstructor() {
+		System.out.println("This method was called before Constructor.");
+	}
+	
+	public void destroy() {
+		
+		System.out.println("inside destroy method.. Sab Khatam Hui Gawa");
+	}
+
+ApplicationContext.xml
+
+bean id="stuList" class="com.masai.Student" init-method="beforeConstructor" destroy-method="destroy">
+
+
+When we will  call this method with Main class than it will create a object for Student class, before creating the object it will run the function namely "beforeConstructor"
+and after when we will close the container itself the destroy function will be called.
+		
+
+	
+
+	
+	
+	
+
+}
+
+
+

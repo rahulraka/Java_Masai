@@ -1,0 +1,30 @@
+a) What are the advantages of using spring boot over spring
+=>
+*Spring Boot aims to shorthen the code, i.e, It provides easiest ways to develop Web Applications.
+*Spring Boot has inbuilt servers such as Tomcat, We dont manually need to add it as dependency it is embedded in Spring Boot.
+*We can create standalone Web application with using SpringBoot.
+*Spring Boot is used mainly to create REST Api's.
+*Spring Boot helps us to avoid a lot od Biler plate codes.
+
+========================================================================================
+
+b) Explain types of Bean Scopes and Explain any two of them.
+=>
+There are total of 4 Bean Scopes In Spring itself.
+
+1.Singleton Scope-
+->This is the default scope for a Bean, When a Bean is in this scope it returns same object every time we pull an object with same IDs, It doesn't matter how many times we pull object with same id it's gonna return Same obj
+eg. 
+A obj1=sxt.getBean("a2",A.class);
+A obj2=sxt.getBean("a2",A.class);
+Syso(obj1==obj2);// It is always gonna return TRUE no matter how many objects we create.
+
+2.Prototype Scope-
+->This scope is gonna return different objects every time even if are using pulling with Same Ids or Same Name.
+eg.A obj1=sxt.getBean("a2",A.class);
+A obj2=sxt.getBean("a2",A.class);
+Syso(obj1==obj2);// It is always gonna return FALSE no matter how many objects we create.
+
+Below are the two Scopes which we can use only in MVC module.
+3. Request Scope
+4. Session Scope

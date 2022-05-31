@@ -1,0 +1,89 @@
+##Tight Coupling-
+
+----------Dependent Class---------
+
+class Car;
+Vehicle v=new Vehicle();
+public void start(){
+v.go();
+}
+public static void main(){
+new Car().start;
+}
+
+----------Dependency class-------
+
+class vehicle;
+public void go(){
+System.out.println("Ride started");
+}
+
+As you can see the if we made any changed in the dependency class we shall make changes in
+the Dependent class also, otherwise our program will fall, these types of classes are called 
+tightly coupled classes.
+
+========================================================================================
+
+##Loose Coupling--
+
+
+interface Vehicle {
+public void go();
+}
+
+
+//dependency class
+class Car implements Vehicle{
+public void start() {
+System.out.println("Car started...");
+}
+
+@Override
+public void go() {
+start();
+}
+
+}
+class Bike implements Vehicle{
+public void ride() {
+System.out.println("ride started....");
+}
+
+@Override
+public void go() {
+ride();
+}
+
+
+}
+//dependent on the car class
+class Travel {
+//it is the dependency
+Vehicle v; //here we can store one of its implemented class obj.
+//constructor injection point
+/*public Travel(Vehicle v) {
+this.v=v;
+} */
+//setter injection point
+public void setV(Vehicle v) {
+this.v=v;
+}
+public void journey() {
+v.go();
+System.out.println("Jounrney started...");
+}
+}
+class Demo {
+public static void main(String[] args) {
+//Travel tr=new Travel(new Car()); //injecting the dependency obj to the dependent, by calling constrcutor injection.
+Travel tr=new Travel();
+tr.setV(new Car()); // injecting the dependency obj to the dependent, by calling setter method.
+tr.journey();
+}
+
+
+As we can see here if we want to change our dependent class to some other dependent class 
+we only need to make changes in the depenedncy class, When classes are connected these waus
+then they are said to be in loose coupled.
+
+

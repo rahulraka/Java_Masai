@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="city" class="com.masai.CityList">
+		<property name="ls">
+			<list>
+			<value>Delhi</value>
+			<value>Chennai</value>
+			<value>Kolkata</value>
+			<value>Mumbai</value>
+			</list>
+			
+		</property>
+	
+	</bean>
+	
+	<bean id="s1" class="com.masai.Student">
+		<property name="roll" value="50"/>
+		<property name="name" value="Rahul"/>
+		<property name="marks" value="150"/>
+	</bean>
+	<bean id="s2" class="com.masai.Student">
+		<property name="roll" value="51"/>
+		<property name="name" value="Munnu"/>
+		<property name="marks" value="170"/>
+	</bean>
+	<bean id="s3" class="com.masai.Student">
+		<property name="roll" value="52"/>
+		<property name="name" value="Najmush"/>
+		<property name="marks" value="180"/>
+	</bean>
+	<bean id="s4" class="com.masai.Student">
+		<property name="roll" value="53"/>
+		<property name="name" value="Raja"/>
+		<property name="marks" value="200"/>
+	</bean>
+	<bean id="s5" class="com.masai.Student">
+		<property name="roll" value="54"/>
+		<property name="name" value="Aman"/>
+		<property name="marks" value="120"/>
+	</bean>
+	
+	<bean id="stuList" class="com.masai.Student" init-method="beforeConstructor" destroy-method="destroy">
+		<property name="students">
+			<list>
+			<ref bean="s1"/>
+			<ref bean="s2"/>
+			<ref bean="s3"/>
+			<ref bean="s4"/>
+			<ref bean="s5"/>
+			</list>
+			
+		</property>
+	
+	</bean>
+	
+	
+
+</beans>

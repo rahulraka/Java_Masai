@@ -1,0 +1,27 @@
+Normalization is the process in which we organise our date to reduce Data duplicacy, Insertion, deletion and update anomalies.
+Why Normalizattion is needed-
+A we know there is no duplication of data in normal Schema, Information is processed in one place and only in one place, thus reducing the probability of inconsistent information.
+Suppose, we added data in a normal Schema than our data will not be updated in multiple places because of being in a normal form, This situation is callsed Updaten anomaly.
+
+Suppose now we are deleting any records from a table, If we have duplicates we might delete non-relevant data too, this situation is called delete anomaly
+ 
+SO, to prevent these types of anomaly, we should use normalization, as it will reduce anomalies to an extent.
+Normalized data can be readed, righted easily, and much faster.
+
+
+==============================================================================
+
+2NF (2nd Normal form)-
+A table is said to be in 2NF when it is meets all the rules for 1NF, and every non-Prime attribute is fully dependent on Prime attribute.
+
+
+ CREATE TABLE SCHEMA.Employees((EmpId varchar(5) Primary KEY,ProjId varchar(5) UNIQUE KEY, EmpName varchar(15), ProjName varchar(20));
+
+As you can see in the upper table it is following 1NF but violating 2NF, because there Non-Prime attributes are partially dependent on the Candidate key,
+but we need fully dpendencies.
+
+So, Lets convert this table in 2NF.
+CREATE TABLE SCHEMA.Employee_Details(EmpID varchar(5) PRIMARY KEY, ProjId varchar(5) FOREIGN KEY REFERENCES(ProjectInfo), EmpName varhcar(20));
+CREATE TABLE SCEHMA.ProjectInfo(ProjId varhcar(5) PRIMARY KEY, ProjName varchar(20));
+
+As you can see now from the schema itself our both Non-Prime attributes are fully dependent on Prime attribute(Candidate Keys), So now the data is is in 2NF.
